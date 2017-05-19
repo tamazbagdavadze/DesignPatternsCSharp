@@ -17,47 +17,4 @@ namespace Flyweight
             Console.ReadLine();
         }
     }
-
-    abstract class Flyweight
-    {
-        public abstract void Greeting(string speech);
-    }
-
-    class Role1 : Flyweight
-    {
-        Flyweight flyweight;
-
-        public Role1(Flyweight flyweight)
-        {
-            this.flyweight = flyweight;
-        }
-
-        public override void Greeting(string speech)
-        {
-            flyweight.Greeting(speech);
-        }
-    }
-
-    class Role2 : Flyweight
-    {
-        Flyweight flyweight;
-
-        public Role2(Flyweight flyweight)
-        {
-            this.flyweight = flyweight;
-        }
-
-        public override void Greeting(string speech)
-        {
-            flyweight.Greeting(speech);
-        }
-    }
-
-    class Actor : Flyweight
-    {
-        public override void Greeting(string speech)
-        {
-            Console.WriteLine(speech);
-        }
-    }
 }
