@@ -2,7 +2,7 @@
 
 namespace Command
 {
-    class ArithmeticUnit
+    internal class ArithmeticUnit
     {
         public int Register { get; set; }
 

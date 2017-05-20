@@ -1,6 +1,6 @@
 ﻿namespace State
 {
-    class Context
+    internal class Context
     {
         public State State { get; set; }
 

@@ -2,9 +2,9 @@
 
 namespace Flyweight
 {
-    class Program
+    internal class Program
     {
-        static void Main(string[] args)
+        private static void Main()
         {
             var actor = new Actor();
 

@@ -1,43 +1,43 @@
 ﻿namespace Command
 {
-    class Calculator
+    internal class Calculator
     {
-        ArithmeticUnit arithmeticUnit;
-        ControlUnit controlUnit;
+        private readonly ArithmeticUnit _arithmeticUnit;
+        private readonly ControlUnit _controlUnit;
 
         public Calculator()
         {
-            arithmeticUnit = new ArithmeticUnit();
-            controlUnit = new ControlUnit();
+            _arithmeticUnit = new ArithmeticUnit();
+            _controlUnit = new ControlUnit();
         }
 
         private int Run(Command command)
         {
-            controlUnit.StoreCommand(command);
-            controlUnit.ExecuteCommand();
-            return arithmeticUnit.Register;
+            _controlUnit.StoreCommand(command);
+            _controlUnit.ExecuteCommand();
+            return _arithmeticUnit.Register;
         }
 
         public int Add(int v)
         {
-            return Run(new Add(arithmeticUnit, v));
+            return Run(new Add(_arithmeticUnit, v));
         }
 
         public int Sub(int v)
         {
-            return Run(new Sub(arithmeticUnit, v));
+            return Run(new Sub(_arithmeticUnit, v));
         }
 
         public int Undo(int levels)
         {
-            controlUnit.Undo(levels);
-            return arithmeticUnit.Register;
+            _controlUnit.Undo(levels);
+            return _arithmeticUnit.Register;
         }
 
         public int Redo(int levels)
         {
-            controlUnit.Redo(levels);
-            return arithmeticUnit.Register;
+            _controlUnit.Redo(levels);
+            return _arithmeticUnit.Register;
         }
     }
 }

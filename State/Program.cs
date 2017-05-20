@@ -1,8 +1,8 @@
 ﻿namespace State
 {
-    class Program
+    internal class Program
     {
-        static void Main(string[] args)
+        private static void Main()
         {
             var context = new Context(new ConcreteStateA());
             context.Request();

@@ -1,21 +1,21 @@
 ﻿namespace Command
 {
-    class Add : Command
+    internal class Add : Command
     {
         public Add(ArithmeticUnit unit, int operand)
         {
-            this.unit = unit;
-            this.operand = operand;
+            Unit = unit;
+            Operand = operand;
         }
 
         public override void Execute()
         {
-            unit.Run('+', operand);
+            Unit.Run('+', Operand);
         }
 
         public override void UnExecute()
         {
-            unit.Run('-', operand);
+            Unit.Run('-', Operand);
         }
     }
 }

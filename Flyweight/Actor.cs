@@ -2,7 +2,7 @@
 
 namespace Flyweight
 {
-    class Actor : Flyweight
+    internal class Actor : Flyweight
     {
         public override void Greeting(string speech)
         {

@@ -1,9 +1,9 @@
 ﻿namespace Command
 {
-    abstract class Command
+    internal abstract class Command
     {
-        protected ArithmeticUnit unit;
-        protected int operand;
+        protected ArithmeticUnit Unit;
+        protected int Operand;
 
         public abstract void Execute();
         public abstract void UnExecute();

@@ -2,40 +2,40 @@
 
 namespace Command
 {
-    class ControlUnit
+    internal class ControlUnit
     {
-        private List<Command> commands = new List<Command>();
-        private int current = 0;
+        private readonly List<Command> _commands = new List<Command>();
+        private int _current;
 
         public void StoreCommand(Command command)
         {
-            commands.Add(command);
+            _commands.Add(command);
         }
 
         public void ExecuteCommand()
         {
-            commands[current].Execute();
-            current++;
+            _commands[_current].Execute();
+            _current++;
         }
 
         public void Undo(int levels)
         {
-            for (int i = 0; i < levels; i++)
+            for (var i = 0; i < levels; i++)
             {
-                if (current > 0)
+                if (_current > 0)
                 {
-                    commands[--current].UnExecute();
+                    _commands[--_current].UnExecute();
                 }
             }
         }
 
         public void Redo(int levels)
         {
-            for (int i = 0; i < levels; i++)
+            for (var i = 0; i < levels; i++)
             {
-                if (current < commands.Count - 1)
+                if (_current < _commands.Count - 1)
                 {
-                    commands[current++].Execute();
+                    _commands[_current++].Execute();
                 }
             }
         }

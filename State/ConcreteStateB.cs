@@ -1,6 +1,6 @@
 ﻿namespace State
 {
-    class ConcreteStateB : State
+    internal class ConcreteStateB : State
     {
         public override void Handle(Context context)
         {

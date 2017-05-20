@@ -2,15 +2,13 @@
 
 namespace Command
 {
-    class Program
+    internal class Program
     {
-        static void Main(string[] args)
+        private static void Main()
         {
             var calculator = new Calculator();
 
-            var result = 0;
-
-            result = calculator.Add(5);
+            var result = calculator.Add(5);
             Console.WriteLine(result);
 
             result = calculator.Sub(3);
